@@ -1,0 +1,120 @@
+/**
+ * White compact & high contrast reveal.js theme, with headers not in capitals.
+ *
+ * By Peter Kehl. Based on white.(s)css by Hakim El Hattab, http://hakim.se
+ *
+ * - Keep the source similar to black.css - for easy comparison.
+ * - $mainFontSize controls code blocks, too (although under some ratio).
+ */
+:root {
+/* Colours */
+/*
+Colours Defined
+In this section, we define the colours available in our theme.
+We should not refer to these directly in our CSS however. Instead,
+we use the names at our "Colours Applied" section.
+*/
+--color-accent: var(--color-dandilion);
+--color-dandilion: #FFE146;
+--color-sahara: #ffe376;
+--color-seafoam: #96F1C6;
+--color-melrose: #aebffe;
+--color-bittersweet: #ff8262;
+
+/*
+Grey Scale
+In this section, we define our greys; let's not have 50 shades
+*/
+--color-white: #fff;
+--color-grey-light: #e7e7e6;
+--color-grey-medium: #b1b4b6;
+--color-grey-dark: #505a5f;
+--color-black: #0b0c0c;
+/*
+Colours Applied
+In this section, we "apply" our colours.
+*/
+--color-link: var(--color-black);
+--color-banner-bg: var(--color-dandilion);
+
+/* Fonts */
+--font-primary: 'Inter', oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+--font-secondary: 'Lora', "Times New Roman", times, serif;
+}
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(./fonts/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #000;
+$headingColor: #000;
+
+$mainFontSize: 42px;
+$mainFont: var(--font-primary);
+$headingFont: var(--font-secondary); 
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+body.front-page {
+  background-color: var(--color-dandilion);
+}
+
+.front-page p {
+  font-family: var(--font-secondary);
+  text-align: right;
+}
+
+section {
+  height: 100%;
+}
+
+.slide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slide-body {
+  flex: auto;
+}
+
+.slide-body > * {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+h1 {
+  background-color: var(--color-dandilion);
+  padding: 1rem;
+}
