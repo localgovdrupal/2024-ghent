@@ -417,9 +417,11 @@ section {
   flex: auto;
 }
 
-.slide-body > * {
+.slide-body ul {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  height: 100%;
   align-content: center;
 }
 

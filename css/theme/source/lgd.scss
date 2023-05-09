@@ -61,7 +61,7 @@ $headingColor: #000;
 
 $mainFontSize: 42px;
 $mainFont: var(--font-primary);
-$headingFont: var(--font-secondary); 
+$headingFont: var(--font-secondary);
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
@@ -108,9 +108,11 @@ section {
   flex: auto;
 }
 
-.slide-body > * {
+.slide-body ul {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  height: 100%;
   align-content: center;
 }
 
