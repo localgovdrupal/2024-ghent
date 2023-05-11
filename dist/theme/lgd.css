@@ -413,6 +413,10 @@ section {
   height: 100%;
 }
 
+.slide-container h1 {
+  width: 100%;
+}
+
 .slide-body {
   flex: auto;
 }
